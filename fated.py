@@ -3,9 +3,9 @@ class Fated:
         self.hp = 100
         self.max_hp = 100
         self.inventory = []
-        self.lvl = 1
+        self.level = 1
         self.experience = 0
-        self.max_exp = 100 * self.lvl
+        self.max_experience = 100 * self.level
 
     def take_damage(self, amount):
         self.hp -= amount
@@ -22,7 +22,7 @@ class Fated:
 
     def show_stats(self):
         print("\n--- Stats ---")
-        print(f"Level: {self.lvl}\tEXP: {self.experience}/{self.max_exp}")
+        print(f"Level: {self.level}\tEXP: {self.experience}/{self.max_experience}")
         print(f"HP: {self.hp}/{self.max_hp}")
 
     def show_inventory(self):
