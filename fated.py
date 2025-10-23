@@ -6,6 +6,7 @@ class Fated:
         self.level = 1
         self.experience = 0
         self.max_experience = 100 * self.level
+        self.unlocked_bullets = []
 
     def take_damage(self, amount):
         self.hp -= amount

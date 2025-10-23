@@ -73,7 +73,7 @@ while True:
     if user_input == 1 and not gun_taken:
         print("As you touch the revolver, you feel and electrifying sensation, and two glowing bullets materialize; one red and one yellow")
         gun_taken = True
-        continue
+        continue            #TODO: add bullets to inventory
     elif user_input == 2:
         print("You open the door, the bright sun nearly blinding you and you step onto lush grass...")
         break
@@ -83,6 +83,7 @@ while True:
     else:
         print("Invalid input.\n")
 
+#HACK: everything past this point is temporary
 print("You take a deep breath of fresh air, when suddely you're confronted with a large gelatinous slime!")
 
 if not gun_taken:
@@ -91,5 +92,4 @@ if not gun_taken:
 
 print("You defeated the slime!")
 Fated().experience += 10
-
 
