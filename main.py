@@ -73,7 +73,10 @@ while True:
     if user_input == 1 and not gun_taken:
         print("As you touch the revolver, you feel and electrifying sensation, and two glowing bullets materialize; one red and one yellow")
         gun_taken = True
-        continue            #TODO: add bullets to inventory
+        Fated().add_item(1) #BUG: not adding items to inventory
+        Fated().add_item("heal")
+        Fated().show_inventory() 
+        continue
     elif user_input == 2:
         print("You open the door, the bright sun nearly blinding you and you step onto lush grass...")
         break
