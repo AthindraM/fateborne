@@ -5,3 +5,16 @@ class Enemy:
         self.level = level
         self.experience = 10 * self.level
         self.drops = []
+
+    def attack(self): #NOTE: prototype 
+        return 1;
+
+    def take_damage(self, amount):
+        self.hp -= amount
+        if self.hp < 0:
+            self.hp = 0
+
+    def heal(self, amount):
+        self.hp += amount
+        if self.hp > self.max_hp:
+            self.hp = self.max_hp

@@ -90,13 +90,17 @@ while True:
 
 #HACK: everything past this point is temporary
 print("You take a deep breath of fresh air, when suddely you're confronted with a large gelatinous slime!")
+slime = enemy()
+
+player.take_damage(slime.attack())
+player.show_stats()
 
 if not gun_taken:
     print("You have no weapon to fight the slime.")
     game_over()
 
 print("You defeated the slime!")
-Fated().experience += 10
+player.experience += 10
 
 load_revolver(player.inventory)
 
