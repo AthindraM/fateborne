@@ -9,10 +9,6 @@ bullet_types = {
     2: "heal"
 }
 
-def generate_bullet(num):
-    regen_num = random.randint(1,num)
-    return regen_num
-
 #TODO: write load()
 def load_revolver(inventory):
     availible_bullets = 0
@@ -47,8 +43,7 @@ def spin():
         barrel.append(first)
 
     num_unlocked_bullets = len(Fated().unlocked_bullets) 
-
-    Fated().inventory.append(generate_bullet(num_unlocked_bullets))
+    Fated().inventory.append(random.randint(1,num_unlocked_bullets)) #generates a bullet and adds it to the end of the barrel
 
 def shoot():
     global barrel
