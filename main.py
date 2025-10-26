@@ -10,6 +10,7 @@ def game_over(reason = "You have perished..."):
     print(f"\n{reason}")
     sys.exit()
 
+player = Fated()
 
 ##### GAME START #####
 clear()
@@ -73,9 +74,9 @@ while True:
     if user_input == 1 and not gun_taken:
         print("As you touch the revolver, you feel and electrifying sensation, and two glowing bullets materialize; one red and one yellow")
         gun_taken = True
-        Fated().add_item(1) #BUG: not adding items to inventory
-        Fated().add_item("heal")
-        Fated().show_inventory() 
+        player.add_item("damage")
+        player.add_item("heal")
+        player.show_inventory() 
         continue
     elif user_input == 2:
         print("You open the door, the bright sun nearly blinding you and you step onto lush grass...")
