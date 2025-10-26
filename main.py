@@ -90,7 +90,7 @@ while True:
 
 #HACK: everything past this point is temporary
 print("You take a deep breath of fresh air, when suddely you're confronted with a large gelatinous slime!")
-slime = enemy()
+slime = Enemy()
 
 player.take_damage(slime.attack())
 player.show_stats()
