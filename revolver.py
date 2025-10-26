@@ -14,18 +14,30 @@ def generate_bullet(num):
     return regen_num
 
 #TODO: write load()
-def load():
+def load_revolver(inventory):
     availible_bullets = 0
     availible_damage_bullets = 0
     availible_heal_bullets = 0
 
-    for items in Fated().inventory:
+    for item in inventory:
         if item == "damage":
             availible_bullets += 1
             availible_damage_bullets += 1
         elif item == "heal":
             availible_bullets += 1
             availible_heal_bullets += 1
+
+    print(f"You have {availible_bullets} bullets: {availible_damage_bullets} damage and {availible_heal_bullets} heal")
+    for i in range(1, len(barrel)): #BUG: elif statement repeats instead of breaking
+        while True:
+            if i <= len(barrel) and i <= availible_bullets:
+                bullet = input("What type of bullet would you like to load?").lower().strip
+            elif i > len(barrel) or i > availible_bullets:
+                print("You don't have any more bullets to load.")
+                break
+            else:
+                print("Invalid input")
+            break
 
 def spin():
     rand_num = random.randint(1, len(barrel))

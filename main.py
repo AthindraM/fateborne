@@ -2,6 +2,7 @@ import os
 import sys
 
 from fated import *
+from revolver import *
 
 def clear():
     os.system("cls" if  os.name == "nt" else "clear")
@@ -96,4 +97,6 @@ if not gun_taken:
 
 print("You defeated the slime!")
 Fated().experience += 10
+
+load_revolver(player.inventory)
 
