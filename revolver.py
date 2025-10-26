@@ -14,6 +14,18 @@ def generate_bullet(num):
     return regen_num
 
 #TODO: write load()
+def load():
+    availible_bullets = 0
+    availible_damage_bullets = 0
+    availible_heal_bullets = 0
+
+    for items in Fated().inventory:
+        if item == "damage":
+            availible_bullets += 1
+            availible_damage_bullets += 1
+        elif item == "heal":
+            availible_bullets += 1
+            availible_heal_bullets += 1
 
 def spin():
     rand_num = random.randint(1, len(barrel))
