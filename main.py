@@ -3,6 +3,8 @@ import sys
 
 from fated import *
 from revolver import *
+from enemy import *
+
 
 def clear():
     os.system("cls" if  os.name == "nt" else "clear")
@@ -90,7 +92,7 @@ while True:
 
 #HACK: everything past this point is temporary
 print("You take a deep breath of fresh air, when suddely you're confronted with a large gelatinous slime!")
-slime = Enemy()
+slime = Enemy(1)
 
 player.take_damage(slime.attack())
 player.show_stats()
