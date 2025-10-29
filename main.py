@@ -94,15 +94,14 @@ while True:
 print("You take a deep breath of fresh air, when suddely you're confronted with a large gelatinous slime!")
 slime = Enemy(1)
 
-player.take_damage(slime.attack())
-player.show_stats()
+#player.take_damage(slime.attack())
+#player.show_stats()
 
-if not gun_taken:
-    print("You have no weapon to fight the slime.")
-    game_over()
+#if not gun_taken:
+    #print("You have no weapon to fight the slime.")
+    #game_over()
 
-print("You defeated the slime!")
-player.experience += 10
+#print("You defeated the slime!")
+#player.experience += 10
 
-load_revolver(player)
 
