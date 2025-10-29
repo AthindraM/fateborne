@@ -1,7 +1,7 @@
 class Fated:
     def __init__(self):
-        self.hp = 100
-        self.max_hp = 100
+        self.hp = 10
+        self.max_hp = 10
         self.inventory = []
         self.level = 1
         self.experience = 0

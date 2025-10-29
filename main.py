@@ -90,9 +90,10 @@ while True:
     else:
         print("Invalid input.\n")
 
-#HACK: everything past this point is temporary
 print("You take a deep breath of fresh air, when suddely you're confronted with a large gelatinous slime!")
 slime = Enemy(1)
+
+#TODO: create combat loop/tutorial
 
 #player.take_damage(slime.attack())
 #player.show_stats()

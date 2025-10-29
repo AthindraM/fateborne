@@ -85,6 +85,8 @@ def shoot():
     bullet = barrel.pop(0)
     barrel.append(0)
 
+    #TODO: give player choice of who to target
+
     bullet_type = bullet_types.get(bullet, "unknown")
     print(f"You fired a {bullet_type} bullet!")
 
