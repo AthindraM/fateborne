@@ -104,5 +104,5 @@ if not gun_taken:
 print("You defeated the slime!")
 player.experience += 10
 
-load_revolver(player.inventory)
+load_revolver(player)
 
