@@ -1,10 +1,7 @@
 import os
 import sys
 
-from fated import *
-from revolver import *
-from enemy import *
-
+from entities import *
 
 def clear():
     os.system("cls" if  os.name == "nt" else "clear")
