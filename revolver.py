@@ -1,5 +1,5 @@
 import random
-from fated import Fated
+from entities import *
 
 barrel = [0, 0, 0, 0, 0, 0]
 

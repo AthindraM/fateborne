@@ -1,6 +1,5 @@
 import os
 import sys
-
 from entities import *
 
 def clear():
