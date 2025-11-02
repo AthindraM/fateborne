@@ -2,6 +2,7 @@ import os
 import sys
 from entities import *
 
+# Game Functions
 def clear():
     os.system("cls" if  os.name == "nt" else "clear")
 
@@ -9,6 +10,7 @@ def game_over(reason = "You have perished..."):
     print(f"\n{reason}")
     sys.exit()
 
+# Player Creation
 player = Fated()
 
 ##### GAME START #####
@@ -86,8 +88,8 @@ while True:
     else:
         print("Invalid input.\n")
 
-print("You take a deep breath of fresh air, when suddely you're confronted with a large gelatinous slime!")
-slime = Enemy(1)
+print("You take a deep breath of fresh air, when suddenly you're confronted with a large gelatinous slime!")
+slime = Slime(1)
 
 #TODO: create combat loop/tutorial
 
