@@ -80,7 +80,6 @@ while True:
         player.unlocked_bullets.append("heal")
         player.add_item("damage")
         player.add_item("heal")
-        player.show_inventory() 
         continue
     elif user_input == 2:
         clear_screen()
@@ -114,7 +113,7 @@ while player.in_combat:
     choice = int(input("[1] Shoot [2] Load [3] Spin\n").strip())
 
     if choice == 1:
-        shoot()
+        shoot(player, slime)
     elif choice == 2:
         load_revolver(player)
     elif choice == 3:
