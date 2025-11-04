@@ -60,7 +60,8 @@ while True:
 
 print(
     "You come to the room of a house. "
-    "There is a tiny fireplace and kitchen, and a table with one chair. There is also another wooden door which seems to lead outside.\n"
+    "There is a tiny fireplace and kitchen, and a table with one chair. "
+    "There is also another wooden door which seems to lead outside.\n"
     "On the table you see a revolver and holster."
 )
 
@@ -74,7 +75,8 @@ while True:
 
     user_input = int(input(prompt).strip())
     if user_input == 1 and not gun_taken:
-        print("As you touch the revolver, you feel and electrifying sensation, and two glowing bullets materialize; one red and one yellow")
+        print("As you touch the revolver, you feel and electrifying sensation, "
+              "and two glowing bullets materialize; one red and one yellow")
         gun_taken = True
         player.unlocked_bullets.append("damage")
         player.unlocked_bullets.append("heal")
