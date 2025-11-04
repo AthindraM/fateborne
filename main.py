@@ -1,9 +1,10 @@
 import os
 import sys
 from entities import *
+from revolver import *
 
 # Game Functions
-def clear():
+def clear_screen():
     os.system("cls" if  os.name == "nt" else "clear")
 
 def game_over(reason = "You have perished..."):
@@ -14,16 +15,16 @@ def game_over(reason = "You have perished..."):
 player = Fated()
 
 ##### GAME START #####
-clear()
+clear_screen()
 print('"O Hunter, heed my call. Rid this world of its evil."\n')
 
 while True:
     user_input = input('"Do you heed?" (Y/n): ').lower().strip()
     if user_input == "y":
-        clear()
+        clear_screen()
         break
     elif user_input == "n":
-        clear()
+        clear_screen()
         print('"Then this world is doomed..."')
         game_over("You have refused the call and let evil run free. GAME OVER")
     else:
@@ -75,11 +76,14 @@ while True:
     if user_input == 1 and not gun_taken:
         print("As you touch the revolver, you feel and electrifying sensation, and two glowing bullets materialize; one red and one yellow")
         gun_taken = True
+        player.unlocked_bullets.append("damage")
+        player.unlocked_bullets.append("heal")
         player.add_item("damage")
         player.add_item("heal")
         player.show_inventory() 
         continue
     elif user_input == 2:
+        clear_screen()
         print("You open the door, the bright sun nearly blinding you and you step onto lush grass...")
         break
     elif user_input == 3:
@@ -89,9 +93,28 @@ while True:
         print("Invalid input.\n")
 
 print("You take a deep breath of fresh air, when suddenly you're confronted with a large gelatinous slime!")
-slime = Slime(1)
+slime = Slime("Slime", 1)
+player.in_combat = True
 
-#TODO: create combat loop/tutorial
+while player.in_combat:
+    Entity.show_battle_comparison(player, slime)
+    choice = int(input("[1] Shoot [2] Load [3] Spin\n").strip())
+
+    if player.hp == 0:
+        game_over("You have perished.")
+    elif slime.hp == 0:
+        player.in_combat = False
+        break
+
+    if choice == 1:
+        shoot()
+    elif choice == 2:
+        load_revolver(player)
+    elif choice == 3:
+        spin(player)
+    else:
+        print("Invalid input.\n")
+
 
 #player.take_damage(slime.attack())
 #player.show_stats()
