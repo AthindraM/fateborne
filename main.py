@@ -96,15 +96,22 @@ print("You take a deep breath of fresh air, when suddenly you're confronted with
 slime = Slime("Slime", 1)
 player.in_combat = True
 
+if not gun_taken:
+    print("You have no weapon to fight the slime.")
+    game_over()
+
 while player.in_combat:
-    Entity.show_battle_comparison(player, slime)
-    choice = int(input("[1] Shoot [2] Load [3] Spin\n").strip())
 
     if player.hp == 0:
         game_over("You have perished.")
     elif slime.hp == 0:
         player.in_combat = False
+        print("You defeated the slime!")
+        player.experience += 10
         break
+
+    Entity.show_battle_comparison(player, slime)
+    choice = int(input("[1] Shoot [2] Load [3] Spin\n").strip())
 
     if choice == 1:
         shoot()
@@ -114,16 +121,5 @@ while player.in_combat:
         spin(player)
     else:
         print("Invalid input.\n")
-
-
-#player.take_damage(slime.attack())
-#player.show_stats()
-
-#if not gun_taken:
-    #print("You have no weapon to fight the slime.")
-    #game_over()
-
-#print("You defeated the slime!")
-#player.experience += 10
 
 
