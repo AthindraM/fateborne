@@ -6,9 +6,6 @@ class Entity:
         self.max_hp = hp
         self.level = level
 
-    def __str__(self):
-        return self.name
-    
     def take_damage(self, amount):
         self.hp -= amount
         if self.hp < 0:

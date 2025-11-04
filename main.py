@@ -104,7 +104,7 @@ if not gun_taken:
 while player.in_combat:
 
     if player.hp == 0:
-        game_over("You have perished.")
+        game_over()
     elif slime.hp == 0:
         player.in_combat = False
         print("You defeated the slime!")

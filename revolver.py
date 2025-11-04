@@ -65,10 +65,6 @@ def load_revolver(fated):
         else:
             print("Invalid input.")
 
-        if available_bullets == 0:
-            print("Revolver fully loaded!")
-            break
-
 def spin(fated):
     rand_num = random.randint(1, len(barrel))
 
