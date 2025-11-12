@@ -44,15 +44,15 @@ while True:
         prompt += "\t[1] Check out the body\n"
     prompt += "\t[2] Go up the stairs\n"
 
-    user_input = int(input(prompt).strip())
-    if user_input == 1 and not body_checked:
+    user_input = input(prompt).strip()
+    if user_input == "1" and not body_checked:
         print(
             "You get up and walk over to the body. "
             "As you reach over and barely touch the soft cloth, the body crumbles into ash, leaving a pile of clothes."
         )
         body_checked = True
         continue
-    elif user_input == 2:
+    elif user_input == "2":
         print("You go up the stairs and open the door...")
         break
     else:
@@ -73,8 +73,8 @@ while True:
         prompt += "\t[1] Take the revolver and holster\n"
     prompt += "\t[2] Go out the door\n\t[3] Go back\n"
 
-    user_input = int(input(prompt).strip())
-    if user_input == 1 and not gun_taken:
+    user_input = input(prompt).strip()
+    if user_input == "1" and not gun_taken:
         print("As you touch the revolver, you feel and electrifying sensation, "
               "and two glowing bullets materialize; one red and one yellow")
         gun_taken = True
@@ -83,11 +83,11 @@ while True:
         player.add_item("damage")
         player.add_item("heal")
         continue
-    elif user_input == 2:
+    elif user_input == "2":
         clear_screen()
         print("You open the door, the bright sun nearly blinding you and you step onto lush grass...")
         break
-    elif user_input == 3:
+    elif user_input == "3":
         print("You try to open the door behind you but it doesn't budge.")
         continue
     else:
@@ -113,13 +113,13 @@ while player.in_combat:
         break
 
     Entity.show_battle_comparison(player, slime)
-    choice = int(input("[1] Shoot [2] Load [3] Spin\n").strip())
+    choice = input("[1] Shoot [2] Load [3] Spin\n").strip()
 
-    if choice == 1:
+    if choice == "1":
         shoot(player, slime)
-    elif choice == 2:
+    elif choice == "2":
         load_revolver(player)
-    elif choice == 3:
+    elif choice == "3":
         spin(player)
     else:
         print("Invalid input.\n")
