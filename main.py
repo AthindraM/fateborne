@@ -94,7 +94,7 @@ while True:
         print("Invalid input.\n")
 
 print("You take a deep breath of fresh air, when suddenly you're confronted with a large gelatinous slime!")
-slime = Slime("Slime", 1)
+slime = Enemy("Slime", 1, 10)
 player.in_combat = True
 
 if not gun_taken:
@@ -108,7 +108,8 @@ while player.in_combat:
     elif slime.hp == 0:
         player.in_combat = False
         print("You defeated the slime!")
-        player.experience += 10
+        player.experience += slime.experience_given
+        print(f"You have gained {slime.experience_given} xp! ({player.experience}/{player.max_experience})")
         break
 
     Entity.show_battle_comparison(player, slime)

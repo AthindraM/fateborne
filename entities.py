@@ -69,18 +69,13 @@ class Fated(Entity):
         print("\n--- Inventory ---")
         print(self.inventory)
 
-# Base Enemy Class
 class Enemy(Entity):
     def __init__(self, name, level, hp):
         super().__init__(name=name, hp=hp, level=level)
         self.boss = False
-        self.experience = 10 * self.level
+        self.experience_given = 10 * self.level
         self.drops = []
 
     def attack(self):  # NOTE: prototype 
         return 1
-
-class Slime(Enemy):
-    def __init__(self, name, level):
-        super().__init__(name=name, level=level, hp=10)
         
