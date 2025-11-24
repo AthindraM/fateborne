@@ -72,8 +72,13 @@ def spin(fated):
         first = barrel.pop(0)
         barrel.append(first)
 
-    num_unlocked_bullets = len(fated.unlocked_bullets)
-    fated.inventory.append(random.randint(1,num_unlocked_bullets)) #generates a bullet and adds it to the inventory  
+    bullet_generated = random.randint(1,len(fated.unlocked_bullets))
+    if bullet_generated == 1:
+        fated.inventory.append("damage")
+        print("You generated a healing bullet!")
+    else:
+        fated.inventory.append("heal")
+        print("You generated a damaging bullet!")
 
 def shoot(fated, enemy):
     global barrel

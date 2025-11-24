@@ -75,7 +75,7 @@ while True:
 
     user_input = input(prompt).strip()
     if user_input == "1" and not gun_taken:
-        print("As you touch the revolver, you feel and electrifying sensation, "
+        print("As you touch the revolver, you feel an electrifying sensation, "
               "and two glowing bullets materialize; one red and one yellow")
         gun_taken = True
         player.unlocked_bullets.append("damage")
