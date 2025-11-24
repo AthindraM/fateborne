@@ -19,7 +19,7 @@ clear_screen()
 print('"O Hunter, heed my call. Rid this world of its evil."\n')
 
 while True:
-    user_input = input('"Do you heed?" (Y/n): ').lower().strip()
+    user_input = input('"Do you heed?" (Y/n):\n').lower().strip()
     if user_input == "y":
         clear_screen()
         break
@@ -112,16 +112,34 @@ while player.in_combat:
         print(f"You have gained {slime.experience_given} xp! ({player.experience}/{player.max_experience})")
         break
 
-    Entity.show_battle_comparison(player, slime)
-    choice = input("[1] Shoot [2] Load [3] Spin\n").strip()
+    playerTurn = True
+    while playerTurn:
+        Entity.show_battle_comparison(player, slime)
+        choice = input("[1] Shoot [2] Load [3] Spin\n").strip()
 
-    if choice == "1":
-        shoot(player, slime)
-    elif choice == "2":
-        load_revolver(player)
-    elif choice == "3":
-        spin(player)
-    else:
-        print("Invalid input.\n")
+        if choice == "1":
+            shoot(player, slime)
+            playerTurn = False
+        elif choice == "2":
+            load_revolver(player)
+            playerTurn = False
+        elif choice == "3":
+            spin(player)
+            playerTurn = False
+        else:
+            print("Invalid input.\n")
+
+    while not playerTurn:
+        attack_chance = random.randint(1, 2)
+        print(attack_chance)
+        if attack_chance == 1:
+            player.take_damage(slime.attack())
+            print(f"The slime attacks you and does {slime.attack()} damage!")
+            playerTurn = True
+        else:
+            print(f"The slime doesn't do anything.")
+            break
+
+
 
 
