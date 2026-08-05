@@ -1,4 +1,5 @@
 import random
+from entities import *
 
 barrel = [0, 0, 0, 0, 0, 0]
 
@@ -75,10 +76,10 @@ def spin(fated):
     bullet_generated = random.randint(1,len(fated.unlocked_bullets))
     if bullet_generated == 1:
         fated.inventory.append("damage")
-        print("You generated a healing bullet!")
+        print("You generated a damaging bullet!")
     else:
         fated.inventory.append("heal")
-        print("You generated a damaging bullet!")
+        print("You generated a healing bullet!")
 
 def shoot(fated, enemy):
     global barrel
