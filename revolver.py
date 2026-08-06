@@ -22,7 +22,7 @@ def load_revolver(fated):
             available_bullets += 1
             available_heal_bullets += 1
 
-    print(f"You have {available_bullets} bullets: {available_damage_bullets} damage and {available_heal_bullets} heal")
+    print(f"\nYou have {available_bullets} bullets: {available_damage_bullets} damage and {available_heal_bullets} heal")
     
     empty_chambers = barrel.count(0)
     if empty_chambers == 0:
@@ -33,7 +33,7 @@ def load_revolver(fated):
         return
 
     while empty_chambers > 0 and available_bullets > 0:
-        bullet = input("What type of bullet would you like to load?\n\t[1] Damage\n\t[2] Heal\n\t[D]one").lower().strip()
+        bullet = input("What type of bullet would you like to load?\n\t[1] Damage\n\t[2] Heal\n\t[D]one\n").lower().strip()
 
         if bullet == "done" or bullet == "d":
             break
@@ -65,6 +65,7 @@ def load_revolver(fated):
                 print("You don't have any heal bullets!")
         else:
             print("Invalid input.")
+        print(f"\nYou have {available_bullets} bullets: {available_damage_bullets} damage and {available_heal_bullets} heal")
 
 def spin(fated):
     rand_num = random.randint(1, len(barrel))

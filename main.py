@@ -39,7 +39,7 @@ print(
 body_checked = False
 
 while True:
-    prompt = "Do you:\n"
+    prompt = "\nDo you:\n"
     if not body_checked:
         prompt += "\t[1] Check out the body\n"
     prompt += "\t[2] Go up the stairs\n"
@@ -62,13 +62,13 @@ print(
     "You come to the room of a house. "
     "There is a tiny fireplace and kitchen, and a table with one chair. "
     "There is also another wooden door which seems to lead outside.\n"
-    "On the table you see a revolver and holster."
+    "On the table you see a revolver and holster.\n"
 )
 
 gun_taken = False
 
 while True:
-    prompt = "Do you:\n"
+    prompt = "\nDo you:\n"
     if not gun_taken:
         prompt += "\t[1] Take the revolver and holster\n"
     prompt += "\t[2] Go out the door\n\t[3] Go back\n"
