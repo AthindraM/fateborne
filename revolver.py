@@ -83,13 +83,13 @@ def spin(fated):
         print("You generated a healing bullet!")
 
 def shoot(fated, enemy):
-    global barrel
 
     while True:
-        target = int(input("Who would you like to target?\n\t[1] Yourself\n\t[2] Enemy\n").strip())
-        if target in [1,2]:
+        target = input("Who would you like to target?\n\t[1] Yourself\n\t[2] Enemy\n").strip()
+        if int(target) in [1,2]:
             break
-        print("Invalid choice!")
+        else:
+            print("Invalid choice!")
 
     bullet = barrel.pop(0)
     barrel.append(0)
