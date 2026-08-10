@@ -1,4 +1,4 @@
-# Fateborne
+# Hunter's Luck
 *(This is a work in progress)*
 
-A turn-based text role-playing game where your life is decided by the spinning barrel of a revolver.
+A game where you use your luck and skills to hunt the monsters plauging the world.
